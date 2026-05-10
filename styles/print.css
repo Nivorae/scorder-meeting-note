@@ -1,0 +1,49 @@
+@page {
+  size: A4;
+  margin: 18mm 16mm 18mm 16mm;
+  @bottom-center {
+    content: "Scorder Demo Note · Page " counter(page) " of " counter(pages);
+    font-size: 9pt;
+    color: #555;
+  }
+}
+
+@media print {
+  html,
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-section {
+    break-inside: avoid;
+  }
+
+  .qa-entry,
+  .pain-point,
+  .commitment {
+    break-inside: avoid;
+  }
+
+  /* strip on-screen alternating tints */
+  tr:nth-child(even),
+  .bg-neutral-50,
+  .bg-neutral-100 {
+    background: transparent !important;
+  }
+
+  /* drop interactive chrome on the form route if it ever prints */
+  button,
+  input,
+  textarea,
+  select {
+    box-shadow: none !important;
+    background: transparent !important;
+    color: #000 !important;
+    border-color: #000 !important;
+  }
+}

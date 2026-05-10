@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Skill template files are not project source — they intentionally
+    // contain placeholder syntax that is not valid TypeScript.
+    ".claude/**",
   ]),
 ]);
 
